@@ -1,6 +1,6 @@
 SHELL=/bin/bash
 ifndef ELASTIC_VERSION
-ELASTIC_VERSION=5.3.2
+ELASTIC_VERSION=2.3.5
 endif
 
 ifdef STAGING_BUILD_NUM
@@ -10,6 +10,7 @@ ES_JAVA_OPTS:=ES_JAVA_OPTS="-Des.plugins.staging=${STAGING_BUILD_NUM}"
 else
 IMAGETAG=$(ELASTIC_VERSION)
 ES_DOWNLOAD_URL=https://artifacts.elastic.co/downloads/elasticsearch
+ES_DOWNLOAD_URL=https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/$(ELASTIC_VERSION)
 endif
 
 ELASTIC_REGISTRY=docker.elastic.co
